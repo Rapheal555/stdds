@@ -1,3 +1,8 @@
+.main {
+  background-image: url("../../public/images/2.png") !important;
+  background-size: cover;
+  /* height: 100%; */
+}
 .wrapper {
   position: relative;
   padding-top: rem(120px);
@@ -14,37 +19,32 @@
   z-index: 1;
 }
 
-.dots {
-  position: absolute;
-  color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
-
-  @media (max-width: 48em) {
-    display: none;
-  }
-}
-
-.dotsLeft {
-  left: 0;
-  top: 0;
-}
-
-.title {
-  text-align: center;
+.smart {
+  letter-spacing: -1px;
+  color: light-dark(var(--mantine-color-white));
+  margin-bottom: var(--mantine-spacing-xs);
+  /* font-family: "Kalnia Glaze"; */
   font-weight: 800;
   font-size: rem(40px);
-  letter-spacing: -1px;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  margin-bottom: var(--mantine-spacing-xs);
-  font-family: Greycliff CF, var(--mantine-font-family);
-
   @media (max-width: 36em) {
     font-size: rem(28px);
-    text-align: left;
   }
 }
 
-.highlight {
+.healthcare {
+  font-family: Poppins, sans-serif;
+  background-clip: text;
+  background-image: linear-gradient(to right, #09f1b8);
   color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+  padding: calc(calc(1em / 16) / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(calc(1em / 16));
+}
+.system {
+  font-family: "Henny Penny", cursive;
+  text-shadow: 0 1px #8da1ff, -1px 0 #c0cbff, -1px 2px #8da1ff, -2px 1px #c0cbff,
+    -2px 3px #8da1ff, -3px 2px #c0cbff, -3px 4px #8da1ff, -4px 3px #c0cbff;
+  color: light-dark(var(--mantine-color-red-6), var(--mantine-color-blue-4));
 }
 
 .description {
