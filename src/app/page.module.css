@@ -6,11 +6,10 @@
 .wrapper {
   position: relative;
   padding-top: rem(120px);
-  padding-bottom: rem(80px);
 
   @media (max-width: 48em) {
     padding-top: rem(80px);
-    padding-bottom: rem(60px);
+    padding-bottom: rem(40px);
   }
 }
 
@@ -33,33 +32,28 @@
 
 .healthcare {
   font-family: Poppins, sans-serif;
-  background-clip: text;
-  background-image: linear-gradient(to right, #09f1b8);
   color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
-  padding: calc(calc(1em / 16) / 2);
-  -webkit-text-stroke-color: transparent;
-  -webkit-text-stroke-width: var(calc(1em / 16));
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+  font-weight: 800;
 }
 .system {
-  font-family: "Henny Penny", cursive;
+  font-family: "Playwrite Danmark Loopet", cursive;
   text-shadow: 0 1px #8da1ff, -1px 0 #c0cbff, -1px 2px #8da1ff, -2px 1px #c0cbff,
     -2px 3px #8da1ff, -3px 2px #c0cbff, -3px 4px #8da1ff, -4px 3px #c0cbff;
-  color: light-dark(var(--mantine-color-red-6), var(--mantine-color-blue-4));
 }
 
 .description {
-  text-align: center;
+  /* text-align: center; */
 
   @media (max-width: 36em) {
-    text-align: left;
+    /* text-align: left; */
     font-size: var(--mantine-font-size-md);
   }
 }
 
 .controls {
   margin-top: var(--mantine-spacing-lg);
-  display: flex;
-  justify-content: center;
 
   @media (max-width: 36em) {
     flex-direction: column;

@@ -14,43 +14,62 @@ export default function Website() {
   return (
     <div>
       <div className={styles.main}>
-        <Container className={styles.wrapper} size={1400}>
+        <Container className={styles.wrapper}>
           <Grid>
-            <Grid.Col span={4}>
+            <Grid.Col visibleFrom="md" span={{ lg: 4, md: 3 }}>
               <Box style={{ display: "flex", justifyContent: "end" }}>
                 <Image maw="310" h="auto" src={"./images/3.png"} alt="" />
               </Box>
             </Grid.Col>
-            <Grid.Col span={8}>
+            <Grid.Col span={{ lg: 8, md: 9 }}>
               <div style={{ justifyContent: "start" }} className={styles.inner}>
                 <Title className={styles.smart}>SMART </Title>
                 <Title className={styles.healthcare}>
                   HEALTHCARE{" "}
-                  <Text component="span" className={styles.system} inherit>
+                  <Text
+                    c="#ff4912"
+                    component="span"
+                    fs="italic"
+                    className={styles.system}
+                    inherit
+                  >
                     system
                   </Text>
                 </Title>
 
-                <Container p={0} size={600}>
-                  <Text size="lg" c="dimmed" className={styles.description}>
-                    Our advanced healthcare platform combines cutting-edge
-                    technology, data-driven insights, and a dedicated focus on
-                    personalized care to revolutionize the way you manage your
-                    health and wellness throughout your lifetime.
-                  </Text>
-                </Container>
+                <Text
+                  mt="xl"
+                  pt="lg"
+                  fs="italic"
+                  size="lg"
+                  c="var(--mantine-color-white)"
+                  className={styles.description}
+                >
+                  Our advanced healthcare platform combines cutting-edge
+                  technology, data-driven insights, and a dedicated focus on
+                  personalized care to revolutionize the way you manage your
+                  health and wellness throughout your lifetime.
+                </Text>
 
                 <div className={styles.controls}>
                   <Button
+                    radius="xl"
                     className={styles.control}
+                    mr={{ md: 20 }}
                     size="lg"
-                    variant="default"
-                    color="gray"
+                    bg="#fa1b35"
+                    c="var(--mantine-color-white)"
                   >
                     How it works
                   </Button>
                   <Link href={"/diagnos"} passHref>
-                    <Button className={styles.control} size="lg">
+                    <Button
+                      radius="xl"
+                      c="#fa1b35"
+                      bg="var(--mantine-color-white)"
+                      className={styles.control}
+                      size="lg"
+                    >
                       Diagnose me
                     </Button>
                   </Link>
