@@ -1,4 +1,5 @@
 "use client";
+import Diagnose from "@/utils/diagnose";
 import {
   Box,
   Button,
@@ -6,11 +7,15 @@ import {
   Grid,
   Image,
   Input,
-  Select,
+  MultiSelect,
 } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
+  // const [value, setValue] = useState<string[]>([]);
+  const [selectedValue, setSelectedValue] = useState<string[]>([]);
+  const [next, setNext] = useState(false);
+
   const Information = () => {
     return (
       <div>
@@ -18,11 +23,13 @@ export default function Page() {
           style={{
             display: "grid",
             justifyContent: "center",
+            position: "relative",
+            bottom: "40%",
             alignItems: "center",
           }}
         >
           <Input
-            maw="250"
+            maw="50vw"
             size="md"
             // mr={{ md: "lg" }}
             placeholder="First name"
@@ -32,10 +39,10 @@ export default function Page() {
             placeholder="Age (eg:25)"
             mt="md"
             size="md"
-            maw="250"
+            w="40vw"
             type="number"
           />
-          <Button mt="lg" size="lg">
+          <Button onClick={() => setNext(true)} mt="lg" size="lg">
             Continue
           </Button>
         </Box>
@@ -43,48 +50,84 @@ export default function Page() {
     );
   };
 
-  const [firstDiagnosis, setFirstDiagnosis] = useState("");
+  const [firstDiagnosis, setFirstDiagnosis] = useState<any>();
   //first category
-  const [firstCat, setFirstCat] = useState<Number>();
-  // switch (firstDiagnosis) {
-  //   case "YYY":
-  //     setFirstCat(1);
-  //     break;
-  //   case "YYN":
-  //     setFirstCat(2);
-  //     break;
-  //   case "YNY":
-  //     setFirstCat(3);
-  //     break;
-  //   case "YNN":
-  //     setFirstCat(4);
-  //     break;
-  //   case "NYY":
-  //     setFirstCat(5);
-  //     break;
-  //   case "NYN":
-  //     setFirstCat(6);
-  //     break;
-  //   case "NNY":
-  //     setFirstCat(7);
-  //     break;
-  //   case "NNN":
-  //     setFirstCat(8);
-  //     break;
-  //   default:
-  //     alert("you have not answered the questions");
-  //     break;
+  // useEffect(() => {
+  //   const { result, diagnosis } = Diagnose({ firstDiagnosis });
+  // }, [firstDiagnosis]);
+
+  // if (next) {
+  //   return (
+  //     <MultiSelect
+  //       // value={}
+  //       data={[
+  //         "High Temperature (Fever)",
+  //         "Headache",
+  //         "Fatigue",
+  //         "Cough",
+  //         "Nausea",
+  //       ]}
+  //       searchable
+  //     ></MultiSelect>
+  //   );
   // }
+
   return (
-    <Container mt="xl">
-      <Grid>
-        <Grid.Col span={6}>
-          <Information />
-        </Grid.Col>
-        <Grid.Col span={6}>
-          <Image alt="" src="/images/3.png" />
-        </Grid.Col>
-      </Grid>
+    <Container
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        placeItems: "center",
+      }}
+      mt="xl"
+    >
+      {next ? (
+        <>
+          <MultiSelect
+            size="md"
+            fz="h1"
+            placeholder="Click to select"
+            // onChange={(e) => setselectedValue(e.values)}
+            // value={selectedValue}
+            data={[
+              { label: "High Temperature (Fever)", value: "A" },
+              { label: "Headache", value: "B" },
+              { label: "Fatigue", value: "C" },
+              { label: "Cough", value: "D" },
+              { label: "Nausea", value: "E" },
+            ]}
+            value={selectedValue}
+            onChange={setSelectedValue}
+            searchable
+          ></MultiSelect>
+          <Button
+            onClick={() => {
+              alert(selectedValue);
+              Diagnose({ selectedValue });
+            }}
+          >
+            Next
+          </Button>
+          <h2>
+            {selectedValue!.sort().map((val: any) => {
+              /*  (
+              <span key={val}>{val}</span>
+            ) */
+              return val;
+            })}
+          </h2>
+          <h1>{selectedValue}</h1>
+        </>
+      ) : (
+        <Grid>
+          <Grid.Col span={6}>
+            <Information />
+          </Grid.Col>
+          <Grid.Col span={6}>
+            <Image alt="" maw={"50vw"} h="auto" src="/images/3.png" />
+          </Grid.Col>
+        </Grid>
+      )}
     </Container>
   );
 }
