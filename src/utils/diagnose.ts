@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 export default function Diagnose({ selectedValue }: any) {
-  alert(selectedValue);
-  console.log(selectedValue);
+  // alert(selectedValue);
+  // console.log(selectedValue);
   // const value = selectedValue!.map((val: any) => {
   //   return val;
   // });
@@ -16,6 +16,7 @@ export default function Diagnose({ selectedValue }: any) {
   // C = FATIGUE
   // D = COUGH
   // E = NAUSEA
+  // ['A', 'B']
 
   switch (selectedValue.join("")) {
     case "A":
