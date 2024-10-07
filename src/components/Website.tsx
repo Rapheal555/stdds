@@ -36,7 +36,12 @@ export default function Website() {
                     system
                   </Text>
                 </Title>
-
+                <Box
+                  hiddenFrom="md"
+                  style={{ display: "flex", justifyContent: "end" }}
+                >
+                  <Image maw="310" h="auto" src={"./images/3.png"} alt="" />
+                </Box>
                 <Text
                   mt="xl"
                   pt="lg"
@@ -52,7 +57,7 @@ export default function Website() {
                 </Text>
 
                 <div className={styles.controls}>
-                  <Button
+                  {/* <Button
                     radius="xl"
                     className={styles.control}
                     mr={{ md: 20 }}
@@ -61,8 +66,8 @@ export default function Website() {
                     c="var(--mantine-color-white)"
                   >
                     How it works
-                  </Button>
-                  <Link href={"/diagnos"} passHref>
+                  </Button> */}
+                  <Link href={"/diagnose"} passHref>
                     <Button
                       radius="xl"
                       c="#fa1b35"

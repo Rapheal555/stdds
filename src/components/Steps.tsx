@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
-function Demo() {
+export default function Steps() {
   const [active, setActive] = useState(0);
 
   const form = useForm({
