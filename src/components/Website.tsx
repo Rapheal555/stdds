@@ -9,6 +9,7 @@ import {
   Grid,
   Image,
   Box,
+  Group,
 } from "@mantine/core";
 export default function Website() {
   return (
@@ -67,17 +68,19 @@ export default function Website() {
                   >
                     How it works
                   </Button> */}
-                  <Link href={"/diagnose"} passHref>
-                    <Button
-                      radius="xl"
-                      c="#fa1b35"
-                      bg="var(--mantine-color-white)"
-                      className={styles.control}
-                      size="lg"
-                    >
-                      Diagnose me
-                    </Button>
-                  </Link>
+                  <Group justify={"center"}>
+                    <Link href={"/diagnose"} passHref>
+                      <Button
+                        radius="xl"
+                        c="#fa1b35"
+                        bg="var(--mantine-color-white)"
+                        className={styles.control}
+                        size="lg"
+                      >
+                        Diagnose me
+                      </Button>
+                    </Link>
+                  </Group>
                 </div>
               </div>
             </Grid.Col>

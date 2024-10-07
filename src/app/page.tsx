@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import Website from "@/components/Website";
 
 export default function Home() {
@@ -9,5 +7,3 @@ export default function Home() {
     </div>
   );
 }
-
-// pages/index.js

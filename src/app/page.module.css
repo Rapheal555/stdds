@@ -1,6 +1,7 @@
 .main {
   background-image: url("../../public/images/2.png") !important;
   background-size: cover;
+  overflow: hidden;
   /* height: 100%; */
 }
 .wrapper {

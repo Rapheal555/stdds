@@ -1,5 +1,3 @@
-// utils/diagnosis.js
-
 const sicknesses = {
   "Covid-19": {
     symptoms: [
